@@ -27,7 +27,9 @@ gulp.task('copy-manifest', function (done) {
 });
 
 gulp.task('watch', function () {
-  return gulp.watch('./src/**/*.js', gulp.series('build'));
+  gulp.watch('./src/**/*.js', gulp.series('build'));
+  gulp.watch('./src/**/*.css', gulp.series('build'));
 });
+
 
 gulp.task('default', gulp.series('copy-manifest', 'build', 'watch'));
