@@ -14,17 +14,11 @@
     "web3": "^1.7.3"
   },
   "scripts": {
-    "start": "gulp watch",
+    "start": "gulp watch connect",
     "build": "gulp",
     "postinstall": "patch-package",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -42,11 +36,14 @@
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "babel-eslint": "^10.1.0",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
     "css-modulesify": "^0.28.0",
     "gulp": "^4.0.2",
-    "gulp-eslint": "^6.0.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-eslint-new": "^1.4.2",
+    "open": "^8.4.0",
     "patch-package": "^6.4.7",
     "vinyl-source-stream": "^2.0.0"
   }
