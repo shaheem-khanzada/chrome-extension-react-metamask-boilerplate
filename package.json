@@ -14,8 +14,8 @@
     "web3": "^1.7.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "gulp watch",
+    "build": "gulp",
     "postinstall": "patch-package",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -46,6 +46,7 @@
     "browserify": "^17.0.0",
     "css-modulesify": "^0.28.0",
     "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
     "patch-package": "^6.4.7",
     "vinyl-source-stream": "^2.0.0"
   }

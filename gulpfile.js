@@ -1,14 +1,21 @@
-// // Gulp Dependencies
 const gulp = require('gulp');
-// Build Dependencies
 const browserify = require('browserify');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
-
+const eslint = require('gulp-eslint');
 
 const env = "./dist";
 
-gulp.task('build', function (done) {
+gulp.task('lint', (done) => {
+  gulp.src('./src/**/*.js')
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+
+  done();
+});
+
+gulp.task('build', gulp.series('lint'), function (done) {
   browserify({ entries: './src/index.js', debug: true }).plugin('css-modulesify', {
     o: env + '/nftprizelocker.css'
   }).transform(babelify)
@@ -16,7 +23,7 @@ gulp.task('build', function (done) {
     .pipe(source('nftprizelocker.bundle.js'))
     .pipe(gulp.dest(env + '/js'));
 
-    done();
+  done();
 });
 
 gulp.task('copy-manifest', function (done) {
@@ -31,5 +38,4 @@ gulp.task('watch', function () {
   gulp.watch('./src/**/*.css', gulp.series('build'));
 });
 
-
-gulp.task('default', gulp.series('copy-manifest', 'build', 'watch'));
+gulp.task('default', gulp.series('copy-manifest', 'build'));

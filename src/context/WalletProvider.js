@@ -61,7 +61,7 @@ const WalletProvider = React.memo(({ children }) => {
 
     const getProvider = () => {
         if (window.ethereum) {
-            console.log('found window.ethereum>>>');
+            console.log('found window.ethereum>>');
             return window.ethereum;
         } else {
             const provider = createMetaMaskProvider();

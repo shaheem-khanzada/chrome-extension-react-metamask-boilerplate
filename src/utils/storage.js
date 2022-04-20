@@ -1,3 +1,5 @@
+/*global chrome*/
+
 const storage = {
     set: async (key, data) => {
         if (localStorage) {
