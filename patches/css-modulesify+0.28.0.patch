@@ -1,0 +1,22 @@
+diff --git a/node_modules/css-modulesify/index.js b/node_modules/css-modulesify/index.js
+index d71525e..2763f4b 100644
+--- a/node_modules/css-modulesify/index.js
++++ b/node_modules/css-modulesify/index.js
+@@ -21,7 +21,7 @@ function generateShortName (name, filename, css) {
+   var numLines = css.substr(0, i).split(/[\r\n]/).length;
+ 
+   var hash = stringHash(css).toString(36).substr(0, 5);
+-  return '_' + name + '_' + hash + '_' + numLines;
++  return name
+ }
+ 
+ /*
+@@ -33,7 +33,7 @@ function generateLongName (name, filename) {
+       .replace(/[\W_]+/g, '_')
+       .replace(/^_|_$/g, '');
+ 
+-  return '_' + sanitisedPath + '__' + name;
++  return name;
+ }
+ 
+ /*

@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { useWallet } from './context/WalletProvider';
 
 function App() {
+  const { isAuthenticated, connectWallet, disconnectWallet } = useWallet();
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h3>Nft Prize Locker</h3>
+        <button onClick={isAuthenticated ? disconnectWallet : connectWallet} id="wallet-connect">
+          {isAuthenticated ? "Disconnect Wallet" : "Connect Wallet"}
+        </button>
       </header>
+      <div className="App-body">
+        <button>Mint</button>
+        <button>Sponsor</button>
+        <button>Acquire</button>
+        <button>Claim</button>
+        <button>Set Transferable Status</button>
+        <button>Manage</button>
+      </div>
     </div>
   );
 }
