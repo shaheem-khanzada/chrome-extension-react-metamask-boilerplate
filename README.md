@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a chrome extension boilerplate build with react and it support web 3 and metamask login so clone it and give a star and save your many gulp hours
 
 ## Available Scripts
 
